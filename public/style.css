@@ -1,0 +1,98 @@
+body {
+font-family: 'Segoe UI';
+background:#eef2f7;
+margin:0;
+}
+
+.navbar {
+background: linear-gradient(to right, #141e30, #243b55);
+padding:15px;
+color:white;
+font-size:22px;
+text-align:center;
+}
+
+.container {
+width:90%;
+margin:30px auto;
+}
+
+.cards {
+display:flex;
+gap:20px;
+margin-bottom:20px;
+}
+
+.card {
+flex:1;
+padding:20px;
+border-radius:12px;
+color:white;
+text-align:center;
+}
+
+.card:nth-child(1){background:#3498db;}
+.card:nth-child(2){background:#e67e22;}
+.card:nth-child(3){background:#27ae60;}
+
+table {
+width:100%;
+background:white;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+th {
+background:#34495e;
+color:white;
+padding:12px;
+}
+
+td {
+padding:10px;
+text-align:center;
+}
+
+.btn {
+padding:8px 12px;
+background:#2980b9;
+color:white;
+border-radius:6px;
+text-decoration:none;
+}
+
+.btn-danger {
+background:#c0392b;
+}
+
+.form-box {
+width:40%;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+}
+
+.input-box {
+display:flex;
+align-items:center;
+border:1px solid #ccc;
+padding:10px;
+margin:10px 0;
+border-radius:6px;
+}
+
+.input-box i {
+margin-right:10px;
+}
+
+.input-box input {
+border:none;
+outline:none;
+flex:1;
+}
+
+.dark {
+background:#121212;
+color:white;
+}

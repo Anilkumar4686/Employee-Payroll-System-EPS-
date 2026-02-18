@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="navbar">
+<i class="fa-solid fa-pen"></i> Edit Employee
+</div>
+
+<div class="form-box">
+
+<form action="/update/<%= emp.id %>" method="POST">
+
+<div class="input-box">
+<i class="fa-solid fa-user"></i>
+<input type="text" name="name" value="<%= emp.name %>" required>
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-building"></i>
+<input type="text" name="department" value="<%= emp.department %>" required>
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-money-bill"></i>
+<input type="number" name="salary" value="<%= emp.salary %>" required>
+</div>
+
+<button>Update Employee</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

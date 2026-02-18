@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="navbar">
+<i class="fa-solid fa-users"></i> Employee Payroll System
+<span class="toggle" onclick="toggleDark()">🌙</span>
+</div>
+
+<div class="container">
+
+<%
+let total = 0;
+employees.forEach(e => total += e.salary);
+let totalTax = total * 0.12;
+let totalNet = total - totalTax;
+%>
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-money-bill"></i>
+<h3>Total Salary</h3>
+<h1>₹ <%= total %></h1>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-receipt"></i>
+<h3>Total Tax</h3>
+<h1>₹ <%= totalTax.toFixed(2) %></h1>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-wallet"></i>
+<h3>Net Payout</h3>
+<h1>₹ <%= totalNet.toFixed(2) %></h1>
+</div>
+
+</div>
+
+<input type="text" id="search" placeholder="Search Employee..." onkeyup="searchEmp()">
+
+<select id="deptFilter" onchange="filterDept()">
+<option value="">All Departments</option>
+<option value="IT">IT</option>
+<option value="HR">HR</option>
+<option value="Sales">Sales</option>
+</select>
+
+<a class="btn" href="/add">
+<i class="fa-solid fa-user-plus"></i> Add Employee
+</a>
+
+<table>
+<tr>
+<th><i class="fa-solid fa-user"></i> Name</th>
+<th><i class="fa-solid fa-building"></i> Department</th>
+<th><i class="fa-solid fa-money-bill"></i> Salary</th>
+<th><i class="fa-solid fa-receipt"></i> Tax</th>
+<th><i class="fa-solid fa-wallet"></i> Net</th>
+<th><i class="fa-solid fa-gear"></i> Action</th>
+</tr>
+
+<% employees.forEach(emp => {
+let tax = emp.salary * 0.12;
+let net = emp.salary - tax;
+%>
+
+<tr class="empRow">
+<td class="empName"><%= emp.name %></td>
+<td class="empDept"><%= emp.department %></td>
+<td>₹ <%= emp.salary %></td>
+<td>₹ <%= tax.toFixed(2) %></td>
+<td>₹ <%= net.toFixed(2) %></td>
+<td>
+<a class="btn" href="/edit/<%= emp.id %>">
+<i class="fa-solid fa-pen"></i>
+</a>
+<a class="btn btn-danger" href="/delete/<%= emp.id %>">
+<i class="fa-solid fa-trash"></i>
+</a>
+</td>
+</tr>
+
+<% }) %>
+
+</table>
+
+</div>
+
+<script>
+function searchEmp() {
+let input = document.getElementById("search").value.toLowerCase();
+let rows = document.querySelectorAll(".empRow");
+rows.forEach(row => {
+let name = row.querySelector(".empName").innerText.toLowerCase();
+row.style.display = name.includes(input) ? "" : "none";
+});
+}
+
+function filterDept() {
+let dept = document.getElementById("deptFilter").value;
+let rows = document.querySelectorAll(".empRow");
+rows.forEach(row => {
+let d = row.querySelector(".empDept").innerText;
+row.style.display = (dept === "" || d === dept) ? "" : "none";
+});
+}
+
+function toggleDark() {
+document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>

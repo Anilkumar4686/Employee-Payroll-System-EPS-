@@ -1,8 +1,44 @@
 [
   {
-    "id": 101,
-    "name": "Rahul",
+    "id": 137576,
+    "name": "Amit ",
     "department": "IT",
     "salary": 50000
+  },
+  {
+    "id": 1771305044981,
+    "name": "dushyant sharma",
+    "department": "it",
+    "salary": 60000
+  },
+  {
+    "id": 1771390857887,
+    "name": "hritik kumar",
+    "department": "it",
+    "salary": 40000
+  },
+  {
+    "id": 1771391022462,
+    "name": "harsh chaudhary",
+    "department": "management",
+    "salary": 70000
+  },
+  {
+    "id": 1771391048673,
+    "name": "ajay kumar",
+    "department": "it",
+    "salary": 55000
+  },
+  {
+    "id": 1771391066685,
+    "name": "anil kumar",
+    "department": "hr",
+    "salary": 80000
+  },
+  {
+    "id": 1771391085990,
+    "name": "atul verma",
+    "department": "sales",
+    "salary": 60000
   }
 ]
